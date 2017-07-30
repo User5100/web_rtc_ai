@@ -9,11 +9,11 @@ io.on('connection', function(socket) {
   console.log('Socket IO connection established')
 
   //listen for signal from client
-  socket.on('textMessage', function(textMsg) {
-    console.log(textMsg)
+  socket.on('message', function(message) {
+    console.log(message)
 
     // For a real app, should be room only (not broadcast)
-		socket.broadcast.emit('textMessage', textMsg);
+		socket.broadcast.emit('textMessage', message);
   })
 })
 
